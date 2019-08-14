@@ -8,10 +8,9 @@ end
 
 def is_a_true_triangle?
   is_a_true_triangle = [(length1 + @length2 > @length3), (@length1 + @length3 > @length2), (@length2+ @length3 > @length1)]
-  [length1,length2,length3].each do |side|
-    is_a_true_triangle << false if side <= 0 
+  [length1,length2,length3].each {|side|
+    is_a_true_triangle << false if side <= 0 }
   raise TriangleError if is_a_true_triangle.include?(false)
-  end
 end
 
 def kind 
